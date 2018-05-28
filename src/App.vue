@@ -9,9 +9,9 @@
      </router-link>
     </div>
     <div class="container">
-        <div class="row navbar-header">
+      <div class="row navbar-header">
         <img src="./assets/images/top_bar.png" style="margin:auto;width:100%;height:150%;">
-        </div>
+      </div>
       <center>
         <div class="row"> 
           <div class="col-sm-3" style="background-color:lavender;">
@@ -28,10 +28,9 @@
           <div class="col-sm-3" style="background-color:lavenderblush;"> 
             <router-link to="/octopus"><h2>Octopus</h2><img class="option" src="./assets/images/octopus.png"></router-link>
           </div>
-
         </div>
-      <br>
-      <br>
+        <br>
+        <br>
       </center>
       <router-view/>
       <div class="spacing_placholder" style="margin-top:500px"></div>

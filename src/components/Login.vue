@@ -14,6 +14,8 @@
 <script>
 import axios from 'axios'
 import Vuex from 'vuex'
+//import router from '@/router/index.js'
+
 export default {
   name: 'Login',
   data () {
@@ -24,22 +26,28 @@ export default {
   },
   methods: {
     login () {
-      axios.post('http://localhost:5000/auth/login',
-        { body: {
-          'email': this.email,
-          'password': this.password
-        }
+      axios.post('http://ec2-52-23-186-226.compute-1.amazonaws.com:5000/auth/login',
+        {
+          body: {
+            'email': this.email,
+            'password': this.password
+          }
         },
-        { headers: {
-          'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-        }).then(res => { console.log('response: ', JSON.stringify(res.data.auth_token, null, 2)) }).catch(error => {
+        {
+          headers: {
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        }).then(res => {
+          console.log('response: ', JSON.stringify(res.data.auth_token, null, 2))
+          console.log("this.email: ", this.email)
+          console.log("json: ", JSON.stringify(res.data.auth_token,null,2))
+          this.$router.push({name:'somethingelse', params: {auth_token: JSON.stringify(res.data.auth_token,null,2)}})
+      }).catch(error => {
         console.log('Error login')
         alert('Error logging in with the supplied credentials.')
         console.log(error)
       })
-
       console.log(this.email)
       console.log(this.password)
     }

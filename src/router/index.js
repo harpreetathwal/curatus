@@ -13,8 +13,8 @@ export default new Router({
       component: Login
     },
     {
-      path: '/somethingelse',
-      name: 'a',
+      path: '/somethingelse/:auth_token',
+      name: 'somethingelse',
       component: somethingelse
     }
   ]
