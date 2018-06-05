@@ -42,7 +42,7 @@ export default {
           console.log('response: ', JSON.stringify(res.data.auth_token, null, 2))
           console.log("this.email: ", this.email)
           console.log("json: ", JSON.stringify(res.data.auth_token,null,2))
-          this.$router.push({name:'somethingelse', params: {auth_token: JSON.stringify(res.data.auth_token,null,2)}})
+          this.$router.push({name:'feed', params: {auth_token: JSON.stringify(res.data.auth_token,null,2)}})
       }).catch(error => {
         console.log('Error login')
         alert('Error logging in with the supplied credentials.')
